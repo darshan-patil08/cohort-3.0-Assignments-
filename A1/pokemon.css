@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('Pokemon Solid.ttf');
+}
+@font-face {
+    font-family: 'ghost';
+    src: url('skyghost.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ghost', sans-serif;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+.container{ 
+    height: 95%; 
+    width: 85%;
+    margin: 2% auto; 
+    display: flex;
+    position: relative;
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+.half{
+       flex: 1;
+      
+}
+.right{
+    background-color: #1e2f4d;
+   
+}
+.left{
+     background-color: #226cec;
+     position: relative;
+     padding: 120px 60px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     overflow: hidden; 
+}
+
+.content {
+    width: 65%; 
+    position: relative;
+    z-index: 5;
+}
+
+.title h4 {
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.name h1 {
+    font-family: 'Pokemon', sans-serif;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.desc p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+.ball {
+    position: absolute;
+    top: 80%;
+    left: -10px;
+    opacity: 0.15; 
+    z-index: 1;
+}
+
+.ball img {
+    width: 350px;
+    mix-blend-mode: multiply; 
+}
+
+.character {
+    width: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 56%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.character img {
+    width: 100%;
+    height: auto;
+    max-height: 95vh;
+    object-fit: contain;
+}
+.logo{
+       position : absolute;
+       top: 30px;
+       left: 50px;
+       z-index: 20;
+}
+
+.menu {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 40px;
+    z-index: 20;
+    cursor: pointer;
+}
+
+/* Pagination Dots */
+.dots {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between dots */
+    z-index: 20;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #226cec; /* Matches the left side color, adjust if needed */
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    opacity: 1;
+    transform: scale(1.3);
+    background-color: #111; /* Darker color for active dot */
+}
+.logo img {
+    width: 150px;
+
+}
+
