@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.logo-img{
+    width: 130px;
+       
+}
+body{
+    background-image: url('bg.png');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    height: 150px;
+    gap: 35%;
+}
+.nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 52px;
+    list-style: none;
+    gap: 20px;
+  
+}
+.nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+.main-container{
+    margin-right: 52px;
+    height: 500px;
+    width: 90%;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+}
+main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 500px;
+    padding: 150px;
+}
+.img-logo img{
+    width: 500px;
+    margin: 50px;
+} 
+.main-content p{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(231, 231, 231);
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.main-content{
+width: 40%;
+}
+.btn{
+    margin-left: 50px;
+}
+.btn-play{ 
+    padding: 15px 35px;
+    background: linear-gradient(90deg, #FCB045, #FD1D1D,#5F3AB4);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn-trailer{
+    background-color: transparent;
+     padding: 15px 35px;
+      font-size: 16px;
+     border-radius: 5px;
+     border: 2px solid rgb(214, 33, 33);
+     color: white;
+}
+.character {
+position:absolute;
+top: 8%;
+right: 10px;
+}
+.character img {
+    height: 800px;
+
+}
+
+.second-container{
+   height:250px;
+   width:50%;
+   background-color:#fff;
+   position:absolute;
+   top: 70%;
+   left: 25%;
+   border-radius: 20px;
+   background-image: url('bg.png');
+   display: flex;
+   justify-content: center;
+   justify-content: space-evenly;
+   align-items: center;
+}
+.box{
+    height: 200px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#box1{
+    background-image: url('one-piece-season-2-3840x2160-23673.jpg');
+    background-size: cover;
+}
+#box2{
+    background-image: url('one-piece-2026-3840x2160-25732.jpg');
+    background-size: cover;
+}
+#box3{
+    background-image: url('netflix-series-one-3840x2160-12848.jpg');
+    background-size: cover;
+}
+
+.box img{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+
+.icon{
+    position: relative;
+   display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 50px;
+    left: 90%;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+.icon img{
+
+    width: 40px;
+    height: 40px;
+}
