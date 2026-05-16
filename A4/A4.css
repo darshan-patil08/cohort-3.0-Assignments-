@@ -150,7 +150,9 @@ border-radius: 30px;
     border-radius: 10px;
     background-color: #1818189d;
     color: #ffffff;
+    border: 0.1px solid #181818;
     font-size: 16px;
+    cursor: pointer;
 }
 .div-2-bottom h1{
     color:#040404;
