@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main{
+    height: 100%;
+    width: 100%;
+   
+}
+nav{
+    height: 100px;
+    width: 100%;
+    padding:50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    width: 50%;
+}
+.logo img{
+    height: 80px;
+}
+.links{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+.links a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+.Signup{
+    color: black;
+    padding: 15px 25px;   
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+.Login{
+    color: white;
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    background-color: black;
+    font-weight: 600;
+}
+.hero-heading{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+}
+.hero-heading h1{
+    font-size:9.5vh;
+    margin-top: 45px;
+    font-weight: 400;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.hero-heading p{
+    font-size:  1.50rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.searching-bar-container{
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar{
+    width: 50%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    background-color: #f2f2f5;
+    border-radius: 50px;
+}
+.search-bar input{
+    width: 80%;
+    height: 50px;
+    border-radius: 50px;
+  border: none;
+  outline: none;
+  background-color:#f2f2f5 ;
+    font-size: 22px;
+    padding-left: 20px;
+}
+.search-bar p{
+    font-size: 25px;
+    font-weight: 600;
+}
+.search-icon{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    background-color: #ed5f95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.search-bar:hover{
+    background-color: transparent;
+    input{
+        background-color: transparent;
+    }
+}
+.trending-search-section{
+    height: 80px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+}
+.trending-search-title {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    color: #a5a6b5;
+   
+}
+.trending-search-item{
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #f2f2f5;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.filter-section{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 90px;
+    justify-content: space-between;
+    gap: 1%;
+    margin-top: 90px;
+}
+.filter-line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filter-item{
+    margin: 20px;
+    font-size: 23px;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+.filter-item:hover{
+    color: #ed5f95;
+}
+#item-1{
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+
+}
+.filter-title{
+    font-size: 23px;
+    font-weight: 400;
+    padding: 10px 20px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.filter-icon{
+    font-size: 23px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px 20px;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 50px;
+}
