@@ -206,3 +206,212 @@ nav{
     border: 2px solid black;
     border-radius: 50px;
 }
+.card-line-1{
+    height: 350px;
+    width: 100%;
+    display: flex;
+    padding: 0px 2%;
+    margin-top: 20px;
+    justify-content:space-evenly;
+}
+.card{
+    height: 400px;
+    width: 22%;
+    position: relative;
+}
+.card-img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+.card-video video{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+.card-video{
+     position: relative; 
+    overflow: hidden;
+}
+.card-img{
+    position: relative; 
+    overflow: hidden; 
+}
+.card-img:hover{
+    .bottom{
+        z-index: 1;
+        top: 66%;
+    }
+}
+.card-video:hover{
+    .bottom{
+        z-index: 1;
+        top: 66%;
+    }
+}
+.profile-pic{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: start;
+    gap:10px;
+}
+.profile-pic img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.info{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+   
+}
+.action-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.profile-type{
+    padding: 2px 4px;
+    background-color: #b9b9cb;
+    font-weight: 600;
+    color: white;
+}
+.bottom{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    height: 110px;
+    width: 100%;
+    background:linear-gradient(transparent, black) ;
+    position: absolute;
+    top: 100%; 
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s; 
+}
+.profile-title{
+        width: 60%;
+        font-size: 11px;
+        display: flex;
+        color: white;
+        padding: 0px 20px;
+        align-items: center;
+        justify-content: start;
+}
+.profile-icons{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.profile-icons i{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    padding: 14px 15px;
+    border-radius: 50px;
+    background-color: white;
+}
+.action-info{
+   height: 100%;
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 5px;
+}
+.action-info i{
+    color: #a8a8ad;
+    font-size: 22px;
+}
+.action-info .ri-heart-fill:hover{
+    color: rgb(255, 44, 150);
+}
+.action-info .ri-eye-fill:hover{
+    color: rgb(0, 0, 255);
+}
+.action-info span{
+    font-size: 20px;
+}
+.profile-title h1{
+    font-size: 20px;
+    font-weight: 500;
+}
+.bottom-nav{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+.signup-btn{
+    height:100px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+}
+.signup-btn p{
+    padding: 10px 20px;
+    background-color: black;
+    border-radius: 50px;
+     font-weight: 600;
+    font-size:20px;
+    cursor: pointer;
+}
+.up-btn{
+    display: flex;
+    align-items: start;
+    height: 100px;
+}
+.up-btn button{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    background-color: #a2a2ab;
+    border: 2px solid white;
+    color: white;
+    font-size:30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.marquee{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    gap: 10rem; 
+}
+.inner{
+    display: flex;
+    animation-name: marquee;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    gap: 10rem;
+}
+.inner img{
+  height: 80px;
+
+}
+@keyframes marquee {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform:translateX(-100%) ;
+    }
+    
+}
