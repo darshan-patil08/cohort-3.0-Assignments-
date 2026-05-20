@@ -132,12 +132,14 @@ nav{
     }
 }
 .trending-search-section{
-    height: 80px;
+    min-height: 80px;
+    height: auto;
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1%;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 .trending-search-title {
     background-color: transparent;
@@ -207,46 +209,58 @@ nav{
     border-radius: 50px;
 }
 .card-line-1{
-    height: 350px;
+    min-height: 400px;
+    height: auto;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     padding: 0px 2%;
     margin-top: 20px;
     justify-content:space-evenly;
+    gap: 50px 20px; /* Add vertical gap for spacing out the rows */
 }
 .card{
-    height: 400px;
+    height: auto; /* Fit to content dynamically */
     width: 22%;
+    min-width: 300px; 
     position: relative;
+    margin-bottom: 20px; /* Buffer space */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Space between img and info profile */
 }
 .card-img img{
-    height: 100%;
     width: 100%;
+    aspect-ratio: 4/3; /* Enforce uniform rectangle for image */
+    object-fit: cover;
     border-radius: 20px;
 }
 .card-video video{
-    height: 100%;
     width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
     border-radius: 20px;
 }
 .card-video{
-     position: relative; 
+    position: relative; 
     overflow: hidden;
+    border-radius: 20px;
 }
 .card-img{
     position: relative; 
     overflow: hidden; 
+    border-radius: 20px;
 }
 .card-img:hover{
     .bottom{
         z-index: 1;
-        top: 66%;
+        top: calc(100% - 100px); /* Safely hug the bottom of relative container */
     }
 }
 .card-video:hover{
     .bottom{
         z-index: 1;
-        top: 66%;
+        top: calc(100% - 100px);
     }
 }
 .profile-pic{
@@ -264,14 +278,13 @@ nav{
 }
 
 .info{
-    height: 10%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 10px;
-   
 }
 .action-info{
     display: flex;
@@ -289,12 +302,13 @@ nav{
     display: flex;
     align-content: center;
     justify-content: space-evenly;
-    height: 110px;
+    height: 100px;
     width: 100%;
     background:linear-gradient(transparent, black) ;
     position: absolute;
     top: 100%; 
-    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s; 
+    left: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s; 
 }
 .profile-title{
         width: 60%;
@@ -317,6 +331,167 @@ nav{
     padding: 14px 15px;
     border-radius: 50px;
     background-color: white;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablets and medium screens */
+@media (max-width: 1024px) {
+    nav {
+        padding: 30px 20px;
+    }
+    .logo {
+        width: 60%;
+    }
+    .links a {
+        font-size: 16px;
+    }
+    .hero-heading h1 {
+        font-size: 6vh;
+    }
+    .search-bar {
+        width: 70%;
+    }
+    .filter-section {
+        padding: 0px 30px;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+        gap: 15px;
+    }
+    .filter-line {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 45%; 
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        padding: 12px 14px;
+        gap: 12px;
+        height: auto;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .logo {
+        width: auto;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+    .logo img {
+        height: 44px;
+    }
+    .links {
+        display: none; /* Keep navbar clean on small screens */
+    }
+    .auth {
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    .Signup,
+    .Login {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+    .hero-heading {
+        height: auto;
+        padding: 40px 20px;
+    }
+    .hero-heading h1 {
+        font-size: 5vh;
+        margin-top: 0;
+    }
+    .hero-heading p {
+        font-size: 1.2rem;
+    }
+    .search-bar {
+        width: 90%;
+        padding: 15px;
+    }
+    .search-bar input {
+        font-size: 16px;
+    }
+    .search-bar p {
+        display: none; /* Hide "Shots" text on very small screens */
+    }
+    .search-icon {
+        height: 45px;
+        width: 45px;
+    }
+    .trending-search-title, .trending-search-item {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    .filter-item {
+        font-size: 16px;
+        margin: 5px;
+    }
+    .card {
+        width: 100%;
+    }
+    
+    /* Fix Footer / Bottom Nav for Mobile */
+    .bottom-nav-2 {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 16px;
+        flex-direction: row;
+    }
+    .nav-items-links {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-items-links h1 {
+        font-size: 14px;
+        margin: 0;
+        line-height: 1.2;
+    }
+    .socials {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 6px;
+    }
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        gap: px;
+        margin-top: 50%;
+        padding: 20px;
+        text-align: center;
+
+    }
+    .footer-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+        align-items: center;
+        gap: 8px;
+    }
+    .marquee {
+        height: auto;
+        padding: 20px 0;
+    }
+    .inner {
+        gap: 3rem;
+    }
+    .inner img {
+        height: 50px;
+    }
 }
 .action-info{
    height: 100%;
