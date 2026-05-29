@@ -1,0 +1,1222 @@
+@font-face {
+  font-family: Reckless;
+  src: url("font/RecklessCondensedS-TRIAL-Book.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("font/Roboto_Mono/static/RobotoMono-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "midnight";
+  src: url("font/midnight-sans-rd-12-medium-trial.otf");
+}
+.figtree {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fbf9eb;
+}
+nav {
+  width: 100%;
+  background-color: #fffefb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Reckless";
+  padding: 0.8rem 1rem;
+  font-size: 0.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav i {
+  font-size: 2rem;
+  width: 33%;
+}
+nav .nav-part-1 {
+  display: flex;
+  gap: 1rem;
+  width: 33%;
+  display: none;
+}
+.nav-part-1 h3 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+nav .nav-part-2 {
+  width: 20%;
+  height: auto;
+  display: flex;
+}
+nav .nav-part-2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+nav .nav-part-3 {
+  display: flex;
+  padding: 1rem;
+  width: 33%;
+  gap: 2rem;
+  align-items: center;
+  justify-content: end;
+  font-family: "Roboto Mono";
+}
+.nav-part-3 h3 {
+  font-weight: 300;
+  font-size: 0.9rem;
+  display: none;
+}
+.nav-part-3 svg {
+  width: 20px;
+  height: 20px;
+}
+
+#section-1 {
+  width: 100%;
+  min-height: 90vh;
+  background-color: #f7ba02;
+  background-image: url("https://www.twoleavestea.com/cdn/shop/files/AlpineBerry_mobile.webp?v=1774284087&width=720");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #211d1b;
+}
+#section-1 h1 {
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  font-family: "Reckless";
+  color: white;
+  font-weight: 500;
+  width: 80%;
+}
+#section-1 p {
+  font-size: clamp(1.2rem, 1vw, 1rem);
+  font-family: "Figtree";
+  font-weight: 400;
+  color: white;
+}
+#section-1 button {
+  width: 90%;
+  padding: 1rem;
+  background-color: #2a2857;
+  color: white;
+  border-radius: 10rem;
+  border: none;
+  font-family: "Figtree";
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  cursor: pointer;
+}
+#section-2 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #faf8eb;
+}
+#section-2 .section-2-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 3rem;
+  text-align: center;
+  font-family: "Reckless";
+}
+.section-2-text h1 {
+  width: 100%;
+  color: #211d1b;
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-weight: 200;
+  margin: 0rem;
+}
+.section-2-button {
+  width: 100%;
+  display: flex;
+  padding: 0rem 2rem;
+  justify-content: start;
+  align-items: center;
+  rotate: -4deg;
+}
+
+#section-2 .section-2-button button {
+  padding: 0rem 0.1rem;
+  font-family: "midnight";
+  font-size: clamp(2.5rem, 4vw, 1rem);
+  border-radius: 10px;
+  background-color: #d5a9dc;
+  letter-spacing: 0.2rem;
+}
+#section-2 .card-container{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    overflow-x: auto;
+
+}
+.card-container::-webkit-scrollbar{
+  display: none;
+}
+.card{
+    display:flex ;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+.card-top{
+    width: 90%;
+    height: 35vh;
+    background-color: #C1EE91;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    border-radius: 1rem;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.card-top-text{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    
+}
+.card-top-text button{
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid #000;
+   background-color: #fff;
+   font-family: Midnight;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   display: block;
+   
+   font-weight: 400;
+}
+.card-top-text span{
+    font-size: 1.2rem;
+    font-family: Reckless;
+}
+.card-top img{
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+    object-position: center;
+  position: absolute;
+  transition: all ease 0.3s;
+}
+
+
+.card-btm-text{
+    background-color: #fff;
+    padding: 0.6rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3rem;
+    font-family: Reckless;
+    font-size: 1.2rem;
+}
+
+.card-top:hover img{
+    scale: 1.1;
+}
+
+.card-btm{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+     font-family: Reckless;
+     align-items: start;
+}
+
+.card-btm h1{
+ font-family: 0.3rem;
+ font-weight: 100;
+}
+
+.card-btm h3{
+ font-family: 0.3rem;
+ font-weight: 100;
+}
+.card-btm p{
+ font-weight: 100;
+opacity: 0.5;
+width: 90%;
+}
+
+.btn-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btm-btn{
+    
+   padding: 1.2rem;
+    border: none;
+    background-color: #2A2857;
+    color: white;
+    font-family: Figtree;
+    border-radius: 1.2rem;
+    font-size: 1.1rem;
+    
+}
+.explore-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  padding: 4rem;
+  border: none;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+
+}
+.explore-btn button{
+  padding: 1rem 4rem;
+    border-radius: 2rem;
+   background-color: #2a2857;
+  color: white;
+  font-family: "Figtree";
+  cursor: pointer;
+}
+.section-3{
+  border-top: 1px solid #211d1b;
+  height:90vh;
+  padding: 5rem 0rem;
+}
+.section-3-top{
+  width: 100%;
+  height: 18vh;
+  padding :0rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.discover-btn{
+  width: 100%;
+}
+.discover-btn button{
+  padding: 0rem 0.5rem;
+  font-family: "midnight";
+  font-size: clamp(2.5rem, 4vw, 1rem);
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #ff8030;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  rotate: -5deg;
+}
+.section-3-heading{
+  width: 100%;
+  display: flex;
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  justify-content: start;
+  align-items: center;
+}
+.section-3-heading h1{
+  font-family: "Reckless";
+  font-weight: 200;
+  text-align: start;
+}
+.section-3-heading h1 span{
+ font-style: italic;
+}
+.section-3-btm{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.search-bar{
+  padding: 1.5rem 7rem 1.5rem 1rem;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  background: transparent;
+ display: flex;
+ justify-content: start;
+ align-items: center;
+}
+.search-bar input{
+  width: 100%;
+  padding: 0rem 1rem;
+  border: none;
+  text-align: start;
+  outline: none;
+  font-family: "Reckless";
+  font-size: clamp(2rem, 2vw, 2rem);
+  background: transparent;
+}
+.search-title{
+  font-family: "Figtree";
+  font-size: clamp(1rem, 4vw, 1rem);
+  font-weight: 200;
+  text-transform: uppercase;
+  text-align: start;
+}
+.search-blocks{
+  display: flex;
+  padding: 2rem 0rem;
+  flex-direction: column;
+  gap: 1rem;
+ 
+}
+.tiles-btn{
+  padding: 0.5rem 1rem;
+  font-family: "Reckless";
+  font-size: clamp(1.8rem, 4vw, 1rem);
+  border-radius: 10px;
+  background-color: #d9e9ff;
+  letter-spacing: 0.1rem;
+}
+.button-tiles{
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: start;
+}
+.section-4{
+  margin-top: 5rem;
+  width: 100%;
+  height: 125vh;
+  position: relative;
+}
+.section-4-img {
+  width: 100%;
+  height: 125vh;
+  object-fit: cover;
+  object-position: center;
+  background-image: url("//www.twoleavestea.com/cdn/shop/files/adam-vradenburg-_gu7E90QChU-unsplash_1_1.webp?v=1771592855&width=2550");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  color: white;
+  padding: 0rem 1.5rem;
+}
+.logo-sec-4{
+  width: 7rem;
+  position: absolute;
+  top: -3%;
+  right: 5%;
+}
+
+.section-svg{
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+.section-svg .svg-div{
+  width:6rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-4-heading{
+  width: 100%;
+  height: auto;
+  padding: 0rem 1rem;
+  text-align: center;
+  font-family: "midnight";
+  font-size: clamp(
+    3rem, 6vw, 
+  4rem);
+  line-height: 0.9;
+}
+.section-4-txt{
+  width: 100%;
+  height: auto;
+  padding: 0rem 1.5rem;
+  text-align: center;
+}
+.section-4-txt p{
+  font-family: "Reckless";
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: 300;
+}
+.our-story-btn{
+  padding: 1rem 4rem;
+    border-radius: 2rem;
+   background-color: #ffffff;
+  color: black;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-family: "Figtree";
+  cursor: pointer;
+}
+.section-5{
+    width: 100%;
+    height: 67vh;
+    background-color: #faf8eb;
+    padding: 6rem 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.reviews-btn{
+  width: 100%;
+  display: flex;
+  padding: 0rem 2rem;
+  justify-content: start;
+  align-items: center;
+  rotate: -4deg;
+}
+.reviews-btn button{
+   padding: 0rem 0.5rem;
+    font-family: "midnight";
+    font-size: clamp(2.5rem, 4vw, 1rem);
+    border-radius: 10px;
+    background-color: #74bd26;
+    letter-spacing: 0rem;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+}
+.reviews-card-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 0rem 1rem;
+  overflow-x: auto;
+}
+.review-card{
+      width: 85%;
+    height: 39vh;
+    background-color: #f5af89;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+}
+.section-6{
+  width: 100%;
+  height: 100vh;
+  background-color: #2a68be;
+}
+.review-card-top{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+    text-align: center;
+}
+.review-card-top h1{
+  font-family: "Reckless";
+  font-size: clamp(1.5rem, 3vw, 1.7rem);
+  font-weight: 300;
+}
+.review-card-top p{
+  font-family: "Figtree";
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+}
+.review-card-btm{
+  background-color: #eb6e44;
+  width: 100%;
+  height: 10vh;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.product-image img{
+  width: 4rem;
+}
+.recommand{
+      border-left: 1px solid black;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0rem 1rem;
+    gap: 2rem;
+}
+.recommand p{
+  font-family: "Reckless";
+  width: 50%;
+  font-size: clamp(1rem, 2vw, 0.5rem);
+  font-weight: 300;
+    font-family: "Roboto Mono";
+  color: white;
+}
+.recommand button{
+  padding: 1rem 1rem;
+  font-size: clamp(1rem, 4vw, 1rem);
+  border-radius: 2rem;
+  background-color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+.card2-h1{
+  font-family: "Reckless";
+  font-size: clamp(1.5rem, 3vw, 1.7rem);
+  font-weight: 300;
+}
+.review-card-2{
+      width: 85%;
+    height: 39vh;
+    background-color: #aade73;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+}
+.review-card-2-btm{
+  background-color: #74bd26;
+  width: 100%;
+  height: 10vh;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.review-card-3{
+      width: 85%;
+    height: 39vh;
+    background-color: #ffd166;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+}
+.review-card-3-btm{
+  background-color: #ffb700;
+  width: 100%;
+  height: 10vh;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.review-card-4{
+      width: 85%;
+    height: 39vh;
+    background-color: #ace673;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+}
+.review-card-4-btm{
+  background-color: #8abf45;
+  width: 100%;
+  height: 10vh;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.review-card-5{
+      width: 85%;
+    height: 39vh;
+    background-color: #d9c1e0;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    padding: 1rem 1rem;
+}
+.review-card-5-btm{
+  background-color: #c791db;
+  width: 100%;
+  height: 10vh;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.section-6{
+  width: 100%;
+  height: 100%;
+  background-color: #2a2857;
+}
+.sec-6-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sec-6-btm{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: #2a2857;
+  text-align: center;
+  padding: 2rem;
+}
+.sec-6-btm h1{
+  font-family: "Reckless";
+  font-size: clamp(3rem, 7vw,7rem);
+  font-weight: 300;
+  color: white;
+}
+.sec-6-btm p{
+  font-family: "Figtree";
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  color: white;
+  
+}
+.sec-6-btm button{
+  padding: 1rem 4rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  border-radius: 2rem;
+  background-color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+.section-7{
+  width: 100%;
+  height: 100vh;
+  background-color: #9e6429;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:4rem;
+  padding: 6rem 0rem;
+  position: relative;
+}
+.animated-svg{
+  width: clamp(9rem, 11vw, 8rem);
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  padding: 1rem;
+}
+.our-lattes-btn{
+  width: 100%;
+  display: flex;
+  padding: 0rem 2rem;
+  justify-content: start;
+  align-items: center;
+  rotate: -4deg;
+}
+
+.our-lattes-btn button{
+   padding: 0rem 0.5rem;
+    font-family: "midnight";
+    font-size: clamp(2.5rem, 4vw, 1rem);
+    border-radius: 6px;
+    background-color: #ffcb96;
+    letter-spacing: 0rem;
+    color: #211d1b;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+}
+.our-lattes-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-heading-sec-7{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.top-heading-sec-7 h1{
+  font-family: "midnight";
+  text-transform: uppercase;
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 300;
+  line-height: 3.8rem;
+  color: white;
+      padding: 0rem 1rem;
+}
+.top-heading-sec-7 p{
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  font-weight: 300;
+  font-family: "Roboto Mono";
+  color: white;
+  text-transform: uppercase;
+}
+
+.corausal-container{
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 1rem 2.5rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    align-items: stretch;
+}
+.corausal-container::-webkit-scrollbar{
+  display: none;
+}
+.corausal-card{
+    width: 100%;
+    min-width: 85%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #ffcb96;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    scroll-snap-align: center;
+    
+}
+.corausal-card-2{
+    width: 100%;
+    min-width: 85%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #c0e670;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    scroll-snap-align: center;
+    
+}
+.corausal-card-3{
+    width: 100%;
+    min-width: 85%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #ffd166;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    scroll-snap-align: center;
+    
+}
+.corausal-card-4{
+    width: 100%;
+    min-width: 85%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #ffdab3;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    scroll-snap-align: center;
+}
+.corausal-card-5{
+    width: 100%;
+    min-width: 85%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #abed79;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    scroll-snap-align: center;
+    
+}
+.corausal-card-img{
+  width: 100%;
+  height: clamp(14rem, 35vh, 20rem);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.corausal-card-img img{
+  width: min(100%, 22rem);
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background-position: center;
+}
+.corausal-card-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0rem 0.5rem 0.5rem;
+  text-align: center;
+}
+.corausal-card-content h2{
+  font-family: "midnight";
+  font-size: clamp(1.5rem, 3vw, 1.7rem);
+  font-weight: 300;
+}
+
+.card-title{
+     width: 100%;
+    display: flex;
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: -4deg;
+}
+.card-title button{
+   padding: 0rem 0.3rem;
+    font-family: "midnight";
+    font-size: clamp(2.5rem, 4vw, 1rem);
+    border-radius: 6px;
+    background-color: #f09f54;
+    letter-spacing: 0rem;
+    color: #211d1b;
+    text-transform: uppercase;
+    line-height: 2.2rem;
+}
+.corausal-card-content h1{
+     font-family: "Reckless";
+    font-size: clamp(3rem, 3vw, 1.7rem);
+  padding: 0rem;
+    text-align: center;
+    font-weight: 300;
+}
+.corausal-card-content p{
+font-family: "figtree";
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    text-align: center;
+  max-width: 30rem;
+}
+.corausal-card-content .corausal-btn{
+  padding: 1rem 4rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  border-radius: 2rem;
+  background-color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+.section-9{
+    width: 100%;
+    height: 77vh;
+    background-color: #f26411;
+    position: relative;
+    overflow: hidden;
+}
+.section-9 .section-9-img{
+  width: 100%;
+  height: 40vh;
+}
+.section-9 .section-9-img img{
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 75% 50%;
+}
+.section-9-content-container{
+  width: 100%;
+  height: 37vh;
+     padding: 2rem 3rem
+}
+.section-9-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+.section-9-content h1{
+     font-family: "Reckless";
+    font-size: clamp(3rem, 6vw, 4rem);
+    text-align: center;
+    font-weight: 300;
+    text-transform:capitalize;
+    color: white;
+}
+.section-9-content p{
+  font-family: "figtree";
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    max-width: 30rem;
+}
+.section-9-content button{
+  padding: 1rem 6rem;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  border-radius: 2rem;
+  background-color: #ffffff;
+  letter-spacing: 0.1rem;
+}
+/* mobile design */
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  nav {
+    width: 100%;
+    background-color: #fffefb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Reckless";
+    padding: 0.5rem 1rem;
+    font-size: 1.8rem;
+    position: sticky;
+  }
+  nav .nav-part-1 {
+    display: flex;
+    gap: 1rem;
+    width: 20%;
+  }
+  nav i {
+    display: none;
+  }
+  nav .nav-part-1 {
+    width: 50%;
+  }
+  .nav-part-1 h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  nav .nav-part-2 {
+    width: 9%;
+  }
+  nav .nav-part-3 {
+    display: flex;
+    width: 50%;
+    gap: 1.5rem;
+  }
+  .nav-part-3 h3 {
+    font-weight: 300;
+    display: block;
+    font-size: clamp(0.7rem, 1vw, 1.5rem);
+    white-space: nowrap;
+  }
+  nav .shop-now {
+    height: 30px;
+    width: 30px;
+  }
+  #section-1 {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    padding: 3rem 2rem;
+    background-image: url("https://twoleavestea.com/cdn/shop/files/AlpineBerry.webp?v=1774284236&width=2250.0");
+    background-size: cover;
+    background-position: center;
+  }
+  #section-1 h1 {
+    width: 20%;
+    text-align: left;
+  }
+  #section-1 p {
+    width: 33%;
+    text-align: left;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+  }
+  #section-1 button {
+    width: 10%;
+    padding: 1rem;
+    background-color: #2a2857;
+    color: white;
+    border-radius: 10rem;
+    border: none;
+    font-family: "Figtree";
+    font-size: clamp(0.5rem, 1vw, 1.5rem);
+    cursor: pointer;
+  }
+  #section-2  .btn-1{
+   display: none;
+}
+.section2-text h1{
+    width: 50%;
+  
+}
+.card-container{
+    margin-top: 8rem;
+}
+.section-2-button {
+  display: flex;
+  padding: 0rem 1rem;
+  justify-content: start;
+  align-items: center;
+  rotate: -4deg;
+}
+.section-3{
+  padding: 5rem 2rem;
+}
+.search-blocks{
+  padding: 5rem 0rem;
+}
+.section-3-btm{
+  padding: 4rem 2rem;
+}
+.section-6 {
+display: flex;
+justify-content: start;
+align-items: center;
+    background-color: #2a2857
+}
+.sec-6-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sec-6-img{
+  width: 100%;
+} 
+.sec-6-btm{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+
+.corausal-container{
+  padding: 2rem 2.5rem 3rem;
+  gap: 2rem;
+}
+.corausal-card{
+  min-width: 85%;
+  max-width: 60rem;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+}
+.corausal-card-2{
+   min-width: 85%;
+  min-width: 85%;
+  max-width: 60rem;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+}
+.corausal-card-3{
+  min-width: 85%;
+  max-width: 60rem;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+}
+.corausal-card-4{
+  min-width: 85%;
+  max-width: 60rem;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+}
+.corausal-card-5{
+  min-width: 85%;
+  max-width: 60rem;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+}
+.corausal-card-img{
+  width: 55%;
+  height: clamp(18rem, 40vh, 26rem);
+}
+.corausal-card-content{
+  width: 45%;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0rem 1rem 0rem 0rem;
+}
+.corausal-card-content h1{
+  text-align: left;
+  font-size: clamp(2.5rem, 3vw, 3.2rem);
+}
+.corausal-card-content p{
+  text-align: left;
+}
+.card-title{
+  justify-content: flex-start;
+  padding: 0rem;
+}
+.section-9{
+display: flex;
+}
+.section-9 .section-9-img{
+  height: 100%;
+}
+.section-9-content-container{
+position: absolute;
+        max-width: 30rem;
+        min-height: 70%;
+        top: 50%;
+        border: 1px solid black;
+        left: 5%;
+        border-radius: 0.8rem;
+        transform: translateY(-50%);
+        width: 79%;
+        background-color: #f26411;
+}
+.section-9-content{
+  align-items: flex-start;
+   text-align: left;
+}
+.section-9-content h1{
+  text-align: left;
+}
+.section-9-content p{
+  text-align: left;
+}
+
+
+@media (min-width: 1440px) {
+  .corausal-container{
+    padding: 3rem 4rem 4rem;
+  }
+  .corausal-card{
+    max-width: 72rem;
+  }
+  .corausal-card-img{
+    height: clamp(20rem, 36vh, 30rem);
+  }
+  .section-9{
+    height: 72vh;
+  }
+  .section-9-content-container{
+    left: 8%;
+    width: min(38%, 40rem);
+  }
+  .section-9-content{
+    padding: 3rem 3rem 3.2rem;
+  }
+}
+}
