@@ -166,6 +166,8 @@ nav .nav-part-3 {
   padding: 2rem;
   display: flex;
   overflow-x: auto;
+  align-items: stretch;
+  gap: 1rem;
 }
 .card-container::-webkit-scrollbar {
   display: none;
@@ -175,10 +177,13 @@ nav .nav-part-3 {
   flex-direction: column;
   gap: 1rem;
   flex-shrink: 0;
+  min-width: clamp(16rem, 80vw, 23rem);
+  width: clamp(16rem, 80vw, 23rem);
 }
 .card-top {
   width: 90%;
-  height: 35vh;
+  height: auto;
+  min-height: clamp(14rem, 28vw, 22rem);
   background-color: #c1ee91;
   position: relative;
   padding: 1rem;
@@ -196,6 +201,8 @@ nav .nav-part-3 {
   display: flex;
   align-items: end;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 .card-top-text button {
   padding: 0.2rem 0.5rem;
@@ -219,6 +226,9 @@ nav .nav-part-3 {
   object-fit: cover;
   object-position: center;
   position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
   transition: all ease 0.3s;
 }
 
@@ -232,6 +242,8 @@ nav .nav-part-3 {
   border-radius: 0.3rem;
   font-family: Reckless;
   font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .card-top:hover img {
@@ -244,6 +256,7 @@ nav .nav-part-3 {
   gap: 0.8rem;
   font-family: Reckless;
   align-items: start;
+  min-height: 11rem;
 }
 
 .card-btm h1 {
@@ -294,12 +307,13 @@ nav .nav-part-3 {
 }
 .section-3 {
   border-top: 1px solid #211d1b;
-  height: 90vh;
+  height: auto;
+  min-height: 0;
   padding: 5rem 0rem;
 }
 .section-3-top {
   width: 100%;
-  height: 18vh;
+  height: auto;
   padding: 0rem 1.3rem;
   display: flex;
   flex-direction: column;
@@ -340,9 +354,12 @@ nav .nav-part-3 {
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  gap: 1rem;
 }
 .search-bar {
-  padding: 1.5rem 7rem 1.5rem 1rem;
+  width: 100%;
+  max-width: 46rem;
+  padding: 1.2rem 1rem;
   border: 1px solid #000;
   border-radius: 1rem;
   background: transparent;
@@ -388,14 +405,16 @@ nav .nav-part-3 {
   align-items: start;
 }
 .section-4 {
-  margin-top: 5rem;
+  margin-top: clamp(2.5rem, 5vw, 5rem);
   width: 100%;
-  height: 125vh;
+  height: auto;
+  min-height: 0;
   position: relative;
 }
 .section-4-img {
   width: 100%;
-  height: 125vh;
+  height: auto;
+  min-height: clamp(34rem, 72vw, 58rem);
   object-fit: cover;
   object-position: center;
   background-image: url("//www.twoleavestea.com/cdn/shop/files/adam-vradenburg-_gu7E90QChU-unsplash_1_1.webp?v=1771592855&width=2550");
@@ -403,17 +422,19 @@ nav .nav-part-3 {
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
   color: white;
-  padding: 0rem 1.5rem;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(5rem, 10vw, 8rem) 1.5rem clamp(2.5rem, 5vw, 4rem);
 }
 .logo-sec-4 {
-  width: 7rem;
+  width: clamp(5.5rem, 8vw, 7rem);
   position: absolute;
-  top: -3%;
+  top: 1rem;
   right: 5%;
+  z-index: 2;
 }
 
 .section-svg {
@@ -423,12 +444,16 @@ nav .nav-part-3 {
   justify-content: space-evenly;
 }
 .section-svg .svg-div {
-  width: 6rem;
+  width: clamp(4.5rem, 10vw, 6rem);
   flex-shrink: 0;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.section-svg .svg-div img {
+  width: 100%;
+  height: auto;
 }
 .section-4-heading {
   width: 100%;
@@ -461,7 +486,8 @@ nav .nav-part-3 {
 }
 .section-5 {
   width: 100%;
-  height: 67vh;
+  height: auto;
+  min-height: 0;
   background-color: #faf8eb;
   padding: 6rem 0.2rem;
   display: flex;
@@ -488,19 +514,24 @@ nav .nav-part-3 {
 }
 .reviews-card-container {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   gap: 1rem;
   padding: 0rem 1rem;
   overflow-x: auto;
+  align-items: stretch;
 }
 .review-card {
   width: 85%;
-  height: 39vh;
+  height: auto;
+  min-height: 24rem;
   background-color: #f5af89;
   border-radius: 0.5rem;
   border: 1px solid black;
   padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .section-6 {
   width: 100%;
@@ -512,7 +543,8 @@ nav .nav-part-3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: auto;
+  min-height: 11rem;
   gap: 0.5rem;
   padding: 1rem 1rem;
   text-align: center;
@@ -530,7 +562,8 @@ nav .nav-part-3 {
 .review-card-btm {
   background-color: #eb6e44;
   width: 100%;
-  height: 10vh;
+  height: auto;
+  min-height: 4.75rem;
   border-radius: 0.5rem;
   border: 1px solid black;
   display: flex;
@@ -572,16 +605,21 @@ nav .nav-part-3 {
 }
 .review-card-2 {
   width: 85%;
-  height: 39vh;
+  height: auto;
+  min-height: 24rem;
   background-color: #aade73;
   border-radius: 0.5rem;
   border: 1px solid black;
   padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .review-card-2-btm {
   background-color: #74bd26;
   width: 100%;
-  height: 10vh;
+  height: auto;
+  min-height: 4.75rem;
   border-radius: 0.5rem;
   border: 1px solid black;
   display: flex;
@@ -591,16 +629,21 @@ nav .nav-part-3 {
 }
 .review-card-3 {
   width: 85%;
-  height: 39vh;
+  height: auto;
+  min-height: 24rem;
   background-color: #ffd166;
   border-radius: 0.5rem;
   border: 1px solid black;
   padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .review-card-3-btm {
   background-color: #ffb700;
   width: 100%;
-  height: 10vh;
+  height: auto;
+  min-height: 4.75rem;
   border-radius: 0.5rem;
   border: 1px solid black;
   display: flex;
@@ -610,16 +653,21 @@ nav .nav-part-3 {
 }
 .review-card-4 {
   width: 85%;
-  height: 39vh;
+  height: auto;
+  min-height: 24rem;
   background-color: #ace673;
   border-radius: 0.5rem;
   border: 1px solid black;
   padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .review-card-4-btm {
   background-color: #8abf45;
   width: 100%;
-  height: 10vh;
+  height: auto;
+  min-height: 4.75rem;
   border-radius: 0.5rem;
   border: 1px solid black;
   display: flex;
@@ -629,16 +677,21 @@ nav .nav-part-3 {
 }
 .review-card-5 {
   width: 85%;
-  height: 39vh;
+  height: auto;
+  min-height: 24rem;
   background-color: #d9c1e0;
   border-radius: 0.5rem;
   border: 1px solid black;
   padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .review-card-5-btm {
   background-color: #c791db;
   width: 100%;
-  height: 10vh;
+  height: auto;
+  min-height: 4.75rem;
   border-radius: 0.5rem;
   border: 1px solid black;
   display: flex;
@@ -688,7 +741,8 @@ nav .nav-part-3 {
 }
 .section-7 {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  min-height: 0;
   background-color: #9e6429;
   display: flex;
   flex-direction: column;
@@ -835,7 +889,7 @@ nav .nav-part-3 {
 }
 .corausal-card-img {
   width: 100%;
-  height: clamp(14rem, 35vh, 20rem);
+  height: clamp(14rem, 32vw, 22rem);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -857,7 +911,7 @@ nav .nav-part-3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.75rem;
   padding: 0rem 0.5rem 0.5rem;
   text-align: center;
 }
@@ -910,14 +964,18 @@ nav .nav-part-3 {
 }
 .section-9 {
   width: 100%;
-  height: 77vh;
+  height: auto;
+  min-height: 0;
   background-color: #f26411;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .section-9 .section-9-img {
   width: 100%;
-  height: 40vh;
+  height: auto;
+  min-height: 18rem;
 }
 .section-9 .section-9-img img {
   width: 100%;
@@ -927,12 +985,12 @@ nav .nav-part-3 {
 }
 .section-9-content-container {
   width: 100%;
-  height: 37vh;
-  padding: 2rem 3rem;
+  height: auto;
+  padding: 2rem 1rem;
 }
 .section-9-content {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -965,98 +1023,101 @@ nav .nav-part-3 {
 .footer-section {
   min-width: 100%;
   display: flex;
-  min-height: 110vh;
+  min-height: 0;
   background-color: #bfdbff;
-  gap: 5rem;
+  gap: 2.5rem;
   flex-direction: column;
+  padding: 1.5rem 0 2rem;
 }
 .footer-top {
-  background-color: #bfdbff;
-  padding: 2rem 1rem 0rem 1rem;
-  width: 100%;
-  height: 73vh;
+    background-color: #bfdbff;
+    padding: 1.25rem 1rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 .footer-section-top {
   display: flex;
   flex-direction: column;
-  height: 35vh;
-  gap: 9rem;
-  align-items: start;
+  gap: 1rem;
+  align-items: stretch;
 }
 .header-inview {
   width: 100%;
-  height: 15vh;
-
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 .header {
-  padding: 1rem 1rem;
+  padding: 0rem 0.5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 .header .header-title {
   font-family: "midnight";
-  font-size: clamp(1.9rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
   font-weight: 300;
   color: #201c1a;
 }
 .header .header-desc {
   font-family: "Reckless";
-  font-size: clamp(1.6rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 300;
-  padding: 0rem 2rem 0rem 0rem;
+  padding: 0rem;
   color: #201c1a;
 }
 .inview {
-  padding: 0rem 3rem 0rem 1rem;
+  padding: 0rem 0.75rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 .inview input {
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.9rem 1rem;
   border-radius: 0.6rem;
+  width: 100%;
 }
 .inview button {
-  padding: 0.8rem 1rem;
-  font-size: clamp(1rem, 4vw, 1.5rem);
+  padding: 0.7rem 1rem;
+  font-size: clamp(0.95rem, 3.5vw, 1.2rem);
   border-radius: 2rem;
   background-color: #2a2857;
   color: white;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
 }
 .socials-media {
-  padding: 0rem 0.8rem;
+  padding: 0rem 0.5rem;
+  display: flex;
+  gap: 0.6rem;
 }
 .socials-media i {
-  font-size: 2rem;
-  padding: 0.5rem 0.5rem;
+  font-size: 1.6rem;
+  padding: 0.45rem 0.45rem;
   border: 1px solid #201c1a;
   border-radius: 50%;
 }
 .footer-center {
   display: flex;
   background-color: #2a2857;
-  padding: 0rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.6rem;
   color: white;
   flex-direction: column;
 }
 .footer-center-item {
-  max-width: 92vw;
-  padding: 1rem 0rem;
-
+  width: 100%;
+  padding: 0.75rem 0rem;
   display: flex;
   justify-content: space-between;
 }
 .footer-center-item p {
-  font-size: clamp(1.9rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
   font-family: "Reckless";
 }
 .footer-center-item i {
@@ -1066,34 +1127,34 @@ nav .nav-part-3 {
   justify-content: center;
   align-items: center;
   width: 25px;
-  max-height: 25px;
+  height: 25px;
   border-radius: 50%;
 }
 .footer-btm {
   background-size: cover;
   background-position: center;
   width: 100%;
-
-  height: 32vh;
+  height: auto;
+  padding: 1rem 0.75rem;
 }
 .footer-btm-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .footer-btm-logo img {
-  width: 10rem;
-  object-fit: cover;
+  width: clamp(6rem, 12vw, 12rem);
+  object-fit: contain;
 }
 .footer-bg-img {
-  height: 20vh;
+  height: auto;
   position: relative;
 }
 .footer-bg-img img {
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: auto;
+  position: static;
   object-fit: cover;
   object-position: center;
 }
@@ -1104,14 +1165,241 @@ nav .nav-part-3 {
   align-items: center;
   font-size: clamp(0.7rem, 2vw, 0.9rem);
   font-family: "roboto mono";
-  padding: 0rem 1rem;
+  padding: 0.25rem 1rem;
 }
 .footer-copyright p a {
   text-decoration: none;
   color: black;
 }
+/* Small-screen fixes to avoid previous-section absolute overlap */
+@media (max-width: 767px) {
+  #section-2 {
+    min-height: 0;
+  }
+  #section-2 .section-2-text {
+    padding: 4.5rem 1rem 3rem;
+  }
+  #section-2 .card-container {
+    padding: 1.25rem 0.75rem 2rem;
+    gap: 0.85rem;
+  }
+  .card {
+    min-width: 88%;
+    width: 88%;
+  }
+  .card-top {
+    min-height: clamp(12rem, 62vw, 17rem);
+  }
+  .card-btm {
+    min-height: 9.5rem;
+  }
+
+  .section-3 {
+    padding: 4rem 0rem 3rem;
+  }
+  .section-3-top {
+    padding: 0rem 1rem;
+    gap: 1rem;
+  }
+  .section-3-heading h1 {
+    line-height: 1.05;
+  }
+  .section-3-btm {
+    padding: 1rem 0.85rem;
+  }
+  .search-bar {
+    padding: 1rem 0.85rem;
+  }
+  .search-bar input {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    padding: 0rem 0.5rem;
+  }
+  .section-4 {
+    margin-top: 2.5rem;
+  }
+  .section-4-img {
+    min-height: clamp(30rem, 140vw, 46rem);
+    justify-content: space-evenly;
+    padding: 4.5rem 1rem 2.5rem;
+  }
+  .logo-sec-4 {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+  .section-svg {
+    gap: 0.75rem;
+  }
+
+  .section-5 {
+    height: auto;
+    min-height: 0;
+    padding: 4rem 0.2rem 3rem;
+    gap: 2rem;
+  }
+  .reviews-btn {
+    padding: 0rem 1rem;
+  }
+  .reviews-card-container {
+    height: auto;
+    gap: 0.75rem;
+    padding: 0rem 0.75rem;
+    align-items: stretch;
+  }
+  .review-card,
+  .review-card-2,
+  .review-card-3,
+  .review-card-4,
+  .review-card-5 {
+    min-width: 86%;
+    min-height: 24rem;
+    height: auto;
+    padding: 0.9rem;
+  }
+  .review-card-top {
+    height: auto;
+    min-height: 9rem;
+    padding: 0.9rem 0.75rem;
+  }
+  .review-card-btm,
+  .review-card-2-btm,
+  .review-card-3-btm,
+  .review-card-4-btm,
+  .review-card-5-btm {
+    height: auto;
+    min-height: 4.25rem;
+  }
+  .recommand {
+    gap: 1rem;
+    padding: 0rem 0.75rem;
+  }
+  .product-image img {
+    width: 3rem;
+  }
+  .section-6 {
+    height: auto;
+  }
+  .sec-6-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .sec-6-img img {
+    width: 100%;
+    height: min(42vh, 18rem);
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .sec-6-btm {
+    padding: 1.5rem 1rem 2rem;
+    gap: 1rem;
+  }
+  .sec-6-btm h1 {
+    line-height: 1;
+  }
+  .section-7 {
+    height: auto;
+    min-height: 0;
+    padding: 4rem 0 2.5rem;
+    gap: 2rem;
+  }
+  .top-heading-sec-7 {
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+  .top-heading-sec-7 h1 {
+    line-height: 1.05;
+    font-size: clamp(2.6rem, 10vw, 3.6rem);
+  }
+  .corausal-container {
+    padding: 1rem 0.75rem 2rem;
+    gap: 0.9rem;
+  }
+  .corausal-card,
+  .corausal-card-2,
+  .corausal-card-3,
+  .corausal-card-4,
+  .corausal-card-5 {
+    min-width: 88%;
+    padding: 1.1rem;
+    gap: 1rem;
+  }
+  .corausal-card-img {
+    height: clamp(12rem, 58vw, 16rem);
+  }
+  .corausal-card-content {
+    gap: 1rem;
+  }
+  .corausal-card-content h1 {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    line-height: 1;
+  }
+  .corausal-card-content p {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+  .corausal-card-content .corausal-btn {
+    padding: 0.9rem 2.2rem;
+  }
+  .footer-section {
+    gap: 1.25rem;
+    padding: 1rem 0 1.25rem;
+  }
+  .footer-top {
+    padding: 0.9rem 0.75rem;
+  }
+  .footer-section-top {
+    gap: 0.75rem;
+  }
+  .footer-center-item p {
+    font-size: 1rem;
+  }
+  .footer-btm {
+    padding: 0.5rem 0.5rem;
+  }
+  .footer-bg-img img {
+    max-height: 160px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+  }
+}
 /* mobile design */
 @media (min-width: 768px) {
+  #section-2 .card-container {
+    padding: 2rem 1.2rem 2.5rem;
+  }
+  #section-2 .card {
+    min-width: clamp(19rem, 42vw, 24rem);
+    width: clamp(19rem, 42vw, 24rem);
+  }
+  #section-2 .card-top {
+    min-height: clamp(15rem, 32vw, 18rem);
+    padding: 1rem 1rem 0.8rem;
+  }
+  #section-2 .card-top img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    top: auto;
+    bottom: 0.2rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+  #section-2 .card-top-text {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #section-2 .card-top-text button {
+    font-size: 1rem;
+  }
+  #section-2 .card-top-text span {
+    font-size: 1rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1195,8 +1483,20 @@ nav .nav-part-3 {
   .section2-text h1 {
     width: 50%;
   }
-  .card-container {
+  #section-2 .card-container {
     margin-top: 8rem;
+    padding: 2.5rem 2.5rem 3rem;
+    gap: 1.5rem;
+  }
+  #section-2 .card {
+    min-width: clamp(20rem, 30vw, 25rem);
+    width: clamp(20rem, 30vw, 25rem);
+  }
+  #section-2 .card-top {
+    min-height: clamp(16rem, 24vw, 22rem);
+  }
+  #section-2 .card-btm {
+    min-height: 12rem;
   }
   .section-2-button {
     display: flex;
@@ -1207,12 +1507,65 @@ nav .nav-part-3 {
   }
   .section-3 {
     padding: 5rem 2rem;
+    min-height: clamp(36rem, 50vw, 52rem);
+  }
+  .section-3-top {
+    max-width: 62rem;
+    gap: 1.25rem;
   }
   .search-blocks {
     padding: 5rem 0rem;
   }
   .section-3-btm {
     padding: 4rem 2rem;
+    max-width: 76rem;
+  }
+  .search-bar {
+    max-width: 52rem;
+  }
+  .section-4 {
+    margin-top: 4rem;
+  }
+  .section-4-img {
+    min-height: clamp(40rem, 56vw, 60rem);
+    justify-content: space-evenly;
+    padding: clamp(5rem, 8vw, 7rem) 2rem clamp(3rem, 6vw, 4.5rem);
+  }
+  .section-4-txt {
+    max-width: 72rem;
+  }
+  .section-svg {
+    max-width: 52rem;
+  }
+  .section-5 {
+    height: auto;
+    min-height: 67vh;
+    padding: 5rem 0.2rem 4rem;
+    gap: 3rem;
+  }
+  .reviews-card-container {
+    height: auto;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+  .review-card,
+  .review-card-2,
+  .review-card-3,
+  .review-card-4,
+  .review-card-5 {
+    min-height: 24rem;
+  }
+  .review-card-top {
+    height: auto;
+    min-height: 12rem;
+  }
+  .review-card-btm,
+  .review-card-2-btm,
+  .review-card-3-btm,
+  .review-card-4-btm,
+  .review-card-5-btm {
+    height: auto;
+    min-height: 5rem;
   }
   .section-6 {
     display: flex;
@@ -1233,6 +1586,17 @@ nav .nav-part-3 {
     justify-content: start;
     align-items: start;
     flex-direction: column;
+  }
+
+  .section-7 {
+    height: auto;
+    min-height: 100vh;
+    padding: 5rem 0 4rem;
+    gap: 3rem;
+  }
+  .top-heading-sec-7 {
+    margin-bottom: 2rem;
+    gap: 1.25rem;
   }
 
   .corausal-container {
@@ -1282,7 +1646,7 @@ nav .nav-part-3 {
   }
   .corausal-card-img {
     width: 55%;
-    height: clamp(18rem, 40vh, 26rem);
+    height: clamp(20rem, 34vw, 28rem);
   }
   .corausal-card-content {
     width: 45%;
@@ -1303,14 +1667,17 @@ nav .nav-part-3 {
   }
   .section-9 {
     display: flex;
+    min-height: clamp(32rem, 42vw, 50rem);
   }
   .section-9 .section-9-img {
     height: 100%;
+    min-height: clamp(32rem, 42vw, 50rem);
   }
   .section-9-content-container {
     position: absolute;
     max-width: 30rem;
-    min-height: 70%;
+    min-height: clamp(20rem, 26vw, 30rem);
+    height: auto;
     top: 50%;
     border: 1px solid black;
     left: 5%;
@@ -1318,6 +1685,7 @@ nav .nav-part-3 {
     transform: translateY(-50%);
     width: 79%;
     background-color: #f26411;
+    z-index: 1;
   }
   .section-9-content {
     align-items: flex-start;
@@ -1331,24 +1699,176 @@ nav .nav-part-3 {
   }
 
   @media (min-width: 1440px) {
+    #section-2 .card-container {
+      padding: 3rem 4rem 3.5rem;
+      gap: 1.75rem;
+    }
+    #section-2 .card {
+      min-width: clamp(21rem, 24vw, 26rem);
+      width: clamp(21rem, 24vw, 26rem);
+    }
+    #section-2 .card-top {
+      min-height: clamp(17rem, 20vw, 22rem);
+    }
+
+    .section-3 {
+      min-height: clamp(40rem, 44vw, 56rem);
+      padding: 5.5rem 3rem;
+    }
+    .section-3-btm {
+      padding: 4.5rem 3rem;
+    }
+    .section-4 {
+      margin-top: 4.5rem;
+    }
+    .section-4-img {
+      min-height: clamp(46rem, 46vw, 66rem);
+      padding: 6rem 3rem 4.5rem;
+    }
+
+    .section-5 {
+      padding: 6rem 1rem 4.5rem;
+      gap: 3.5rem;
+    }
+    .reviews-card-container {
+      gap: 1.5rem;
+      padding: 0rem 2rem;
+    }
+    .review-card,
+    .review-card-2,
+    .review-card-3,
+    .review-card-4,
+    .review-card-5 {
+      min-height: 26rem;
+    }
+    .review-card-top {
+      min-height: 13rem;
+    }
+    .review-card-btm,
+    .review-card-2-btm,
+    .review-card-3-btm,
+    .review-card-4-btm,
+    .review-card-5-btm {
+      min-height: 5.5rem;
+    }
     .corausal-container {
       padding: 3rem 4rem 4rem;
+      gap: 2.5rem;
     }
     .corausal-card {
       max-width: 72rem;
     }
     .corausal-card-img {
-      height: clamp(20rem, 36vh, 30rem);
+      height: clamp(22rem, 30vw, 30rem);
     }
     .section-9 {
-      height: 72vh;
+      height: auto;
+      min-height: clamp(36rem, 40vw, 56rem);
     }
     .section-9-content-container {
       left: 8%;
       width: min(38%, 40rem);
+      min-height: clamp(22rem, 24vw, 32rem);
     }
     .section-9-content {
       padding: 3rem 3rem 3.2rem;
+    }
+
+    @media (min-width: 1920px) {
+      #section-2 .card-container {
+        padding: 3rem 5rem 4rem;
+        gap: 2rem;
+      }
+      #section-2 .card {
+        min-width: clamp(22rem, 19vw, 27rem);
+        width: clamp(22rem, 19vw, 27rem);
+      }
+      #section-2 .card-top {
+        min-height: clamp(18rem, 17vw, 23rem);
+      }
+
+      .section-3 {
+        min-height: clamp(46rem, 40vw, 62rem);
+      }
+      .section-3-top,
+      .section-3-btm {
+        max-width: 86rem;
+      }
+      .section-4-img {
+        min-height: clamp(52rem, 38vw, 72rem);
+      }
+      .section-4-txt {
+        max-width: 84rem;
+      }
+
+      .section-5 {
+        padding: 6.5rem 2rem 5rem;
+        gap: 3.5rem;
+      }
+      .reviews-card-container {
+        gap: 2rem;
+        padding: 0rem 3rem;
+      }
+      .review-card,
+      .review-card-2,
+      .review-card-3,
+      .review-card-4,
+      .review-card-5 {
+        flex: 0 0 clamp(22rem, 24vw, 30rem);
+        min-width: clamp(22rem, 24vw, 30rem);
+        min-height: 28rem;
+      }
+      .section-7 {
+        min-height: clamp(52rem, 60vh, 68rem);
+        padding: 6rem 0 5rem;
+      }
+      .corausal-container {
+        padding: 3.25rem 5rem 4.5rem;
+      }
+      .corausal-card,
+      .corausal-card-2,
+      .corausal-card-3,
+      .corausal-card-4,
+      .corausal-card-5 {
+        max-width: 80rem;
+      }
+      .corausal-card-img {
+        height: clamp(24rem, 24vw, 34rem);
+      }
+      .section-9 {
+        min-height: clamp(42rem, 42vw, 64rem);
+      }
+      .section-9-content-container {
+        left: 6%;
+        width: min(32%, 38rem);
+      }
+    }
+
+    @media (min-width: 2560px) {
+      #section-2 .card-container {
+        padding: 3.25rem 6rem 4.5rem;
+      }
+      #section-2 .card {
+        min-width: clamp(23rem, 16vw, 28rem);
+        width: clamp(23rem, 16vw, 28rem);
+      }
+
+      .section-3 {
+        min-height: clamp(54rem, 36vw, 74rem);
+      }
+      .section-4-img {
+        min-height: clamp(58rem, 34vw, 82rem);
+      }
+
+      .reviews-card-container {
+        padding: 0rem 4rem;
+      }
+      .corausal-container {
+        padding: 3.5rem 6rem 5rem;
+      }
+      .section-9-content-container {
+        width: min(28%, 40rem);
+      }
     }
   }
 }
