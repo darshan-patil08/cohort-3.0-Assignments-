@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager - A7</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-icon"><i data-lucide="check-square"></i></span>
+      <span class="brand-name">Tasko</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-link active" data-target="section-tasks">
+        <span class="nav-icon"><i data-lucide="clipboard-list"></i></span> Tasks
+      </button>
+      <button class="nav-link" data-target="section-attr">
+        <span class="nav-icon"><i data-lucide="scan-search"></i></span> Attr vs Prop
+      </button>
+      <button class="nav-link" data-target="section-pipeline">
+        <span class="nav-icon"><i data-lucide="layers"></i></span> Pipeline
+      </button>
+      <button class="nav-link" data-target="section-events">
+        <span class="nav-icon"><i data-lucide="zap"></i></span> Event Flow
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="theme-row">
+        <span>Theme</span>
+        <button id="themeSwitch" class="toggle-btn" data-theme="dark">
+          <i data-lucide="moon"></i>
+        </button>
+      </div>
+      <p class="sidebar-footer">A7 · Cohort 3.0</p>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <button class="menu-toggle" id="menuToggle">
+        <i data-lucide="menu"></i>
+      </button>
+      <h1 class="topbar-title">Task Manager</h1>
+    </div>
+
+    <!-- ===========================
+         SECTION 1 - TASKS
+    ============================ -->
+    <section class="page-section active-section" id="section-tasks">
+
+      <div class="section-header">
+        <h2><i data-lucide="clipboard-list"></i> My Tasks</h2>
+        <p class="section-desc">Create and manage your daily tasks here.</p>
+      </div>
+
+      <!-- Add Task Form -->
+      <div class="card">
+        <h3 class="card-title">Add New Task</h3>
+        <div class="task-form">
+          <input type="text" id="taskTitle" placeholder="Task title..." />
+          <select id="taskCategory">
+            <option value="">Category</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="study">Study</option>
+            <option value="other">Other</option>
+          </select>
+          <button id="addTaskBtn">
+            <i data-lucide="plus"></i> Add
+          </button>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="card controls-card">
+        <div class="controls-row">
+          <div class="search-wrap">
+            <i data-lucide="search" class="search-icon-inline"></i>
+            <input type="text" id="searchInput" placeholder="Search tasks..." class="search-input" />
+          </div>
+          <select id="filterCategory" class="filter-select">
+            <option value="all">All Categories</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="study">Study</option>
+            <option value="other">Other</option>
+          </select>
+          <button id="clearAllBtn" class="danger-btn">
+            <i data-lucide="trash-2"></i> Clear All
+          </button>
+        </div>
+        <div class="counters-row">
+          <div class="counter-badge total">
+            <i data-lucide="list"></i> Total <strong id="totalCount">0</strong>
+          </div>
+          <div class="counter-badge pending">
+            <i data-lucide="clock"></i> Pending <strong id="pendingCount">0</strong>
+          </div>
+          <div class="counter-badge done">
+            <i data-lucide="check-circle"></i> Done <strong id="doneCount">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task List (Event Delegation on this div) -->
+      <div id="taskContainer" class="task-container">
+        <p id="emptyMsg" class="empty-msg">No tasks yet. Add one above!</p>
+      </div>
+
+    </section>
+
+    <!-- ===========================
+         SECTION 2 - ATTR vs PROP
+    ============================ -->
+    <section class="page-section" id="section-attr">
+
+      <div class="section-header">
+        <h2><i data-lucide="scan-search"></i> Attributes vs Properties</h2>
+        <p class="section-desc">Understanding the difference between HTML attributes and DOM properties.</p>
+      </div>
+
+      <div class="card">
+        <div class="attr-demo-grid">
+          <div class="attr-col">
+            <h4><i data-lucide="file-code"></i> HTML Attribute</h4>
+            <p>Set in HTML markup. Stays fixed — doesn't update when user types.</p>
+            <code>input.getAttribute("value")</code>
+          </div>
+          <div class="attr-vs">VS</div>
+          <div class="attr-col">
+            <h4><i data-lucide="cpu"></i> DOM Property</h4>
+            <p>Live JavaScript value. Updates in real-time as user types.</p>
+            <code>input.value</code>
+          </div>
+        </div>
+
+        <div class="demo-input-row">
+          <input type="text" id="attrTestInput" value="hello" placeholder="Type here..." />
+          <button id="attrDemoBtn">
+            <i data-lucide="play"></i> Check Difference
+          </button>
+        </div>
+
+        <div id="attrDemoResult" class="demo-result hidden"></div>
+      </div>
+
+      <!-- Data Attributes Demo -->
+      <div class="card">
+        <h3 class="card-title"><i data-lucide="tag"></i> Data Attributes Demo</h3>
+        <p class="card-desc">Every task card uses <code>data-*</code> attributes for ID, status and category.</p>
+        <div class="code-block">
+          <pre>card.setAttribute("data-id", task.id);
+card.setAttribute("data-status", "pending");
+card.setAttribute("data-category", task.category);
+
+// Read back
+card.getAttribute("data-id");   // string
+card.dataset.status;            // shortcut via dataset</pre>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===========================
+         SECTION 3 - PIPELINE
+    ============================ -->
+    <section class="page-section" id="section-pipeline">
+
+      <div class="section-header">
+        <h2><i data-lucide="layers"></i> Browser Rendering Pipeline</h2>
+        <p class="section-desc">How the browser turns HTML + CSS into pixels on your screen.</p>
+      </div>
+
+      <div class="pipeline-wrapper">
+
+        <!-- HTML → DOM -->
+        <div class="pipeline-column">
+          <div class="pipe-label html-label">HTML</div>
+          <div class="pipe-step">
+            <div class="step-icon"><i data-lucide="file-text"></i></div>
+            <strong>Parsing</strong>
+            <p>Browser reads HTML byte by byte, character by character.</p>
+          </div>
+          <div class="pipe-arrow-down"><i data-lucide="arrow-down"></i></div>
+          <div class="pipe-step">
+            <div class="step-icon"><i data-lucide="type"></i></div>
+            <strong>Tokenization</strong>
+            <p>HTML is split into tokens: tags, text, attributes.</p>
+          </div>
+          <div class="pipe-arrow-down"><i data-lucide="arrow-down"></i></div>
+          <div class="pipe-step highlight-step">
+            <div class="step-icon"><i data-lucide="git-branch"></i></div>
+            <strong>DOM Tree</strong>
+            <p>Tokens become nodes linked in a tree structure.</p>
+          </div>
+        </div>
+
+        <div class="pipe-plus-sign">+</div>
+
+        <!-- CSS → CSSOM -->
+        <div class="pipeline-column">
+          <div class="pipe-label css-label">CSS</div>
+          <div class="pipe-step">
+            <div class="step-icon"><i data-lucide="paintbrush"></i></div>
+            <strong>CSS Parsing</strong>
+            <p>Browser reads and parses all stylesheet rules.</p>
+          </div>
+          <div class="pipe-arrow-down"><i data-lucide="arrow-down"></i></div>
+          <div class="pipe-step highlight-step">
+            <div class="step-icon"><i data-lucide="swatch-book"></i></div>
+            <strong>CSSOM Tree</strong>
+            <p>CSS rules become a tree with computed styles for each node.</p>
+          </div>
+        </div>
+
+        <div class="pipe-equals-sign">=</div>
+
+        <!-- Render Tree → Screen -->
+        <div class="pipeline-column">
+          <div class="pipe-label render-label">OUTPUT</div>
+          <div class="pipe-step highlight-step result-step">
+            <div class="step-icon"><i data-lucide="combine"></i></div>
+            <strong>Render Tree</strong>
+            <p>DOM + CSSOM combined. Only visible elements included.</p>
+          </div>
+          <div class="pipe-arrow-down"><i data-lucide="arrow-down"></i></div>
+          <div class="pipe-step">
+            <div class="step-icon"><i data-lucide="ruler"></i></div>
+            <strong>Layout</strong>
+            <p>Browser calculates exact position and size of each element.</p>
+          </div>
+          <div class="pipe-arrow-down"><i data-lucide="arrow-down"></i></div>
+          <div class="pipe-step">
+            <div class="step-icon"><i data-lucide="pen-tool"></i></div>
+            <strong>Paint</strong>
+            <p>Fills in pixels: colors, borders, text, shadows.</p>
+          </div>
+          <div class="pipe-arrow-down"><i data-lucide="arrow-down"></i></div>
+          <div class="pipe-step highlight-step">
+            <div class="step-icon"><i data-lucide="monitor"></i></div>
+            <strong>Composite</strong>
+            <p>All layers merged → final image shown on screen.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         SECTION 4 - EVENT FLOW
+    ============================ -->
+    <section class="page-section" id="section-events">
+
+      <div class="section-header">
+        <h2><i data-lucide="zap"></i> Event Flow Demo</h2>
+        <p class="section-desc">See how events travel through the DOM in real-time.</p>
+      </div>
+
+      <div class="events-grid">
+
+        <!-- Bubbling -->
+        <div class="card event-card">
+          <h3 class="card-title bubble-title">
+            <i data-lucide="arrow-up-from-dot"></i> Event Bubbling
+          </h3>
+          <p class="card-desc">Event fires at the child first, then travels UP to parent and grandparent.</p>
+
+          <div class="flow-direction">Child → Parent → Grandparent</div>
+
+          <div class="event-box grandparent-box" id="grandparent">
+            <span class="box-label">Grandparent</span>
+            <div class="event-box parent-box" id="parent">
+              <span class="box-label">Parent</span>
+              <button class="event-box child-box" id="childBtn">
+                <i data-lucide="mouse-pointer-click"></i> Click Me (Child)
+              </button>
+            </div>
+          </div>
+
+          <div class="event-log" id="bubbleLog">
+            <span class="log-placeholder">Click the button above to see bubbling...</span>
+          </div>
+        </div>
+
+        <!-- Capturing -->
+        <div class="card event-card">
+          <h3 class="card-title capture-title">
+            <i data-lucide="arrow-down-to-dot"></i> Event Capturing
+          </h3>
+          <p class="card-desc">Event fires at grandparent first, then travels DOWN to parent and child.</p>
+
+          <div class="flow-direction">Grandparent → Parent → Child</div>
+
+          <div class="event-box grandparent-box" id="grandparent2">
+            <span class="box-label">Grandparent</span>
+            <div class="event-box parent-box" id="parent2">
+              <span class="box-label">Parent</span>
+              <button class="event-box child-box" id="childBtn2">
+                <i data-lucide="mouse-pointer-click"></i> Click Me (Child)
+              </button>
+            </div>
+          </div>
+
+          <div class="event-log" id="captureLog">
+            <span class="log-placeholder">Click the button above to see capturing...</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Event Delegation -->
+      <div class="card delegation-card">
+        <h3 class="card-title">
+          <i data-lucide="target"></i> Event Delegation (used in Task List)
+        </h3>
+        <p class="card-desc">Instead of adding 3 listeners to every task card, we add ONE listener to the parent container. When any button is clicked, the event bubbles up and we check <code>event.target</code>.</p>
+        <div class="delegation-diagram">
+          <div class="del-parent">
+            <i data-lucide="box"></i> taskContainer (1 listener)
+            <div class="del-children">
+              <div class="del-child">Card 1 → [Edit] [Done] [Delete]</div>
+              <div class="del-child">Card 2 → [Edit] [Done] [Delete]</div>
+              <div class="del-child">Card 3 → [Edit] [Done] [Delete]</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
