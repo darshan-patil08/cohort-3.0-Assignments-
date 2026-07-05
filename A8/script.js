@@ -74,10 +74,12 @@
             // Use the login name for the greeting if it's their first time
             if (userSettings.name === 'User') {
                 userSettings.name = user;
-                saveSettings(); // This also triggers masterRefresh
-            } else {
-                checkAuthState();
+                localStorage.setItem('fintrack_settings', JSON.stringify(userSettings));
             }
+            
+            checkAuthState();
+            masterRefresh();
+            showPage('dashboard');
         }
 
         // --- 3. Page Navigation ---

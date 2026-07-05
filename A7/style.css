@@ -826,8 +826,6 @@ pre {
 .log-p  { color: #fb923c; }
 .log-c  { color: #4ade80; }
 
-/* Delegation diagram */
-.delegation-card {}
 
 .delegation-diagram {
   margin-top: 10px;
