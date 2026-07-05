@@ -1,9 +1,9 @@
  // --- 1. State Variables ---
-        // This is where we hold the data in memory
+        
         let isLoggedIn = false;
         let transactions = [];
         let currentFilter = 'all';
-        let myChart = null; // Store the chart instance so we can destroy it later
+        let myChart = null; 
         
         let userSettings = {
             name: 'User',
@@ -19,8 +19,7 @@
             'JPY': '¥'
         };
 
-        // --- 2. Initial Setup ---
-        // Runs as soon as the page loads completely
+        // --- 2. Initial Setup 
         function initApp() {
             // Check if logged in
             let savedLogin = localStorage.getItem('fintrack_loggedIn');
@@ -31,7 +30,6 @@
             // Check if we have saved data in Local Storage
             let savedTransactions = localStorage.getItem('fintrack_transactions');
             if (savedTransactions) {
-                // Convert string back into a real array
                 transactions = JSON.parse(savedTransactions);
             }
 
@@ -71,7 +69,7 @@
             isLoggedIn = true;
             localStorage.setItem('fintrack_loggedIn', 'true');
             
-            // Use the login name for the greeting if it's their first time
+            
             if (userSettings.name === 'User') {
                 userSettings.name = user;
                 localStorage.setItem('fintrack_settings', JSON.stringify(userSettings));
@@ -83,7 +81,7 @@
         }
 
         // --- 3. Page Navigation ---
-        // Switch between dashboard and settings without reloading the page
+       
         function showPage(page) {
             // Hide both first
             document.getElementById('dashboard').classList.remove('active');
@@ -100,7 +98,7 @@
                 document.getElementById('settings').classList.add('active');
                 document.getElementById('nav-settings').style.color = 'var(--primary-color)';
                 
-                // Prefill the settings form with current data
+               
                 document.getElementById('setting-name').value = userSettings.name;
                 document.getElementById('setting-currency').value = userSettings.currency;
                 document.getElementById('setting-darkmode').checked = userSettings.darkMode;
@@ -132,7 +130,7 @@
             document.getElementById('t-amount').value = '';
         }
 
-        // Close modal if user clicks outside of the box
+       
         window.onclick = function(event) {
             let modal = document.getElementById('transactionModal');
             if (event.target == modal) {
@@ -157,10 +155,10 @@
 
             // Create new transaction object
             let newTx = {
-                id: Date.now(), // Using timestamp to ensure it's always unique
+                id: Date.now(), 
                 type: type,
                 desc: desc,
-                amount: parseFloat(amount), // make sure it's a number
+                amount: parseFloat(amount), 
                 date: date,
                 category: category
             };
@@ -177,7 +175,7 @@
         function deleteTransaction(id) {
             let confirmDel = confirm("Are you sure you want to delete this transaction?");
             if (confirmDel) {
-                // Keep everything EXCEPT the one with this ID
+               
                 transactions = transactions.filter(t => t.id !== id);
                 saveData();
                 masterRefresh();
@@ -238,17 +236,15 @@
             tbody.innerHTML = ''; // Clear old rows
 
             let sym = currencySymbols[userSettings.currency] || '$';
-
-            // Filter the list if needed
             let filteredList = transactions;
             if (currentFilter !== 'all') {
                 filteredList = transactions.filter(t => t.type === currentFilter);
             }
 
-            // Sort so newest dates are at the top
+       
             filteredList.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-            // If empty, show a nice message
+            
             if (filteredList.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 20px; opacity: 0.7;">No transactions found. Add some to get started!</td></tr>';
                 return;
