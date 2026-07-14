@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <meta name="description" content="A single-page productivity dashboard with todo list, planner, pomodoro timer, weather, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="morning">
+
+    <!-- top bar with clock and settings -->
+    <header class="top-bar">
+        <div class="datetime-section">
+            <span id="current-time" class="time-display">--:--</span>
+            <span id="current-date" class="date-display">Loading...</span>
+        </div>
+        <button id="settings-btn" class="settings-btn" title="Settings">
+            <i data-lucide="settings"></i>
+        </button>
+    </header>
+
+    <!-- settings dropdown panel -->
+    <div id="settings-panel" class="settings-panel hidden">
+        <h3>Settings</h3>
+        <div class="setting-row">
+            <span><i data-lucide="moon" class="setting-icon"></i> Dark Mode</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+        <div class="setting-row">
+            <span><i data-lucide="clock" class="setting-icon"></i> 24-Hour Clock</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="clock-format-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- right sidebar navigation -->
+    <nav class="sidebar" id="sidebar">
+        <button class="nav-btn active" data-target="dashboard" title="Home">
+            <i data-lucide="home"></i>
+        </button>
+        <button class="nav-btn" data-target="todo" title="Todo List">
+            <i data-lucide="list-checks"></i>
+        </button>
+        <button class="nav-btn" data-target="planner" title="Planner">
+            <i data-lucide="calendar-days"></i>
+        </button>
+        <button class="nav-btn" data-target="pomodoro" title="Timer">
+            <i data-lucide="timer"></i>
+        </button>
+        <button class="nav-btn" data-target="goals" title="Goals">
+            <i data-lucide="target"></i>
+        </button>
+        <button class="nav-btn" data-target="quote" title="Quotes">
+            <i data-lucide="sparkles"></i>
+        </button>
+    </nav>
+
+    <!-- main content area -->
+    <main class="main-content">
+
+        <!-- ========== DASHBOARD HOME ========== -->
+        <section id="view-dashboard" class="view active">
+            <h2 id="greeting" class="greeting">Good afternoon! ☀️</h2>
+
+            <div class="dashboard-top-row">
+                <!-- weather widget -->
+                <div class="glass-card weather-card">
+                    <div id="weather-loading" class="weather-state">
+                        <div class="mini-loader"></div>
+                        <span>Getting weather...</span>
+                    </div>
+                    <div id="weather-content" class="weather-state hidden">
+                        <div class="weather-main">
+                            <span id="weather-icon" class="weather-icon">☀️</span>
+                            <span id="weather-temp" class="weather-temp">--°C</span>
+                        </div>
+                        <div class="weather-info">
+                            <p id="weather-city" class="weather-city">--</p>
+                            <p id="weather-desc">--</p>
+                            <div class="weather-extras">
+                                <span><i data-lucide="droplets" class="inline-icon"></i> <span id="weather-humidity">--</span>%</span>
+                                <span><i data-lucide="wind" class="inline-icon"></i> <span id="weather-wind">--</span> km/h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="weather-error" class="weather-state hidden">
+                        <p>Couldn't load weather 😕</p>
+                        <button id="retry-weather-btn" class="btn-small">Retry</button>
+                    </div>
+                </div>
+
+                <!-- quote widget on dashboard -->
+                <div class="glass-card quote-card">
+                    <p id="quote-text" class="quote-text">"Loading a quote for you..."</p>
+                    <span id="quote-author" class="quote-author">—</span>
+                    <button id="new-quote-btn" class="btn-small">New Quote ✨</button>
+                </div>
+            </div>
+
+            <!-- feature cards grid -->
+            <h3 class="section-title">Your Tools</h3>
+            <div class="cards-grid">
+                <div class="feature-card" data-target="todo">
+                    <div class="card-icon-wrap">
+                        <i data-lucide="list-checks"></i>
+                    </div>
+                    <h3>Todo List</h3>
+                    <p>Manage your tasks</p>
+                </div>
+                <div class="feature-card" data-target="planner">
+                    <div class="card-icon-wrap">
+                        <i data-lucide="calendar-days"></i>
+                    </div>
+                    <h3>Daily Planner</h3>
+                    <p>Plan your day hour by hour</p>
+                </div>
+                <div class="feature-card" data-target="pomodoro">
+                    <div class="card-icon-wrap">
+                        <i data-lucide="timer"></i>
+                    </div>
+                    <h3>Pomodoro Timer</h3>
+                    <p>Focus with timed sessions</p>
+                </div>
+                <div class="feature-card" data-target="goals">
+                    <div class="card-icon-wrap">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3>Daily Goals</h3>
+                    <p>Track your daily progress</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TODO LIST VIEW ========== -->
+        <section id="view-todo" class="view hidden">
+            <div class="view-header">
+                <button class="back-btn" data-target="dashboard">
+                    <i data-lucide="arrow-left" class="inline-icon"></i> Back
+                </button>
+                <h2>Todo List</h2>
+            </div>
+            <div class="todo-input-area">
+                <input type="text" id="todo-input" placeholder="What do you need to do?" maxlength="120">
+                <button id="add-todo-btn" class="btn-primary">
+                    <i data-lucide="plus" class="inline-icon"></i> Add Task
+                </button>
+            </div>
+            <div class="todo-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Done</button>
+            </div>
+            <ul id="todo-list" class="todo-list"></ul>
+            <p id="todo-empty" class="empty-msg hidden">No tasks yet. Add one above!</p>
+        </section>
+
+        <!-- ========== DAILY PLANNER VIEW ========== -->
+        <section id="view-planner" class="view hidden">
+            <div class="view-header">
+                <button class="back-btn" data-target="dashboard">
+                    <i data-lucide="arrow-left" class="inline-icon"></i> Back
+                </button>
+                <h2>Daily Planner</h2>
+            </div>
+            <p class="planner-date" id="planner-date"></p>
+            <div id="planner-slots" class="planner-slots"></div>
+        </section>
+
+        <!-- ========== POMODORO TIMER VIEW ========== -->
+        <section id="view-pomodoro" class="view hidden">
+            <div class="view-header">
+                <button class="back-btn" data-target="dashboard">
+                    <i data-lucide="arrow-left" class="inline-icon"></i> Back
+                </button>
+                <h2>Pomodoro Timer</h2>
+            </div>
+            <div class="pomodoro-container">
+                <p id="session-label" class="session-label">Work Session</p>
+                <div class="timer-ring">
+                    <svg class="timer-svg" viewBox="0 0 200 200">
+                        <circle class="timer-track" cx="100" cy="100" r="90" />
+                        <circle id="timer-progress" class="timer-progress" cx="100" cy="100" r="90" />
+                    </svg>
+                    <span id="timer-display" class="timer-display">25:00</span>
+                </div>
+                <div class="timer-controls">
+                    <button id="start-btn" class="btn-primary">
+                        <i data-lucide="play" class="inline-icon"></i> Start
+                    </button>
+                    <button id="pause-btn" class="btn-secondary" disabled>
+                        <i data-lucide="pause" class="inline-icon"></i> Pause
+                    </button>
+                    <button id="reset-btn" class="btn-outline">
+                        <i data-lucide="rotate-ccw" class="inline-icon"></i> Reset
+                    </button>
+                </div>
+                <div class="pomodoro-info">
+                    <p>🍅 Work: 25 min → Break: 5 min</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== DAILY GOALS VIEW ========== -->
+        <section id="view-goals" class="view hidden">
+            <div class="view-header">
+                <button class="back-btn" data-target="dashboard">
+                    <i data-lucide="arrow-left" class="inline-icon"></i> Back
+                </button>
+                <h2>Daily Goals</h2>
+            </div>
+            <div class="goals-progress-section">
+                <p id="goals-progress-text" class="goals-progress-text">0 of 0 completed</p>
+                <div class="progress-bar-track">
+                    <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="goals-input-area">
+                <input type="text" id="goal-input" placeholder="Set a goal for today..." maxlength="100">
+                <button id="add-goal-btn" class="btn-primary">
+                    <i data-lucide="plus" class="inline-icon"></i> Add Goal
+                </button>
+            </div>
+            <ul id="goals-list" class="goals-list"></ul>
+            <p id="goals-empty" class="empty-msg hidden">No goals set. Add one above!</p>
+        </section>
+
+        <!-- ========== QUOTE FULL VIEW ========== -->
+        <section id="view-quote" class="view hidden">
+            <div class="view-header">
+                <button class="back-btn" data-target="dashboard">
+                    <i data-lucide="arrow-left" class="inline-icon"></i> Back
+                </button>
+                <h2>Motivation</h2>
+            </div>
+            <div class="quote-full-container">
+                <div class="glass-card quote-full-card">
+                    <p id="quote-full-text" class="quote-full-text">"Loading..."</p>
+                    <span id="quote-full-author" class="quote-full-author">—</span>
+                </div>
+                <button id="new-quote-full-btn" class="btn-primary">
+                    <i data-lucide="sparkles" class="inline-icon"></i> Get New Quote
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
