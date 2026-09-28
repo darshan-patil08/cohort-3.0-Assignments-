@@ -229,7 +229,7 @@ const Footer = ({ onSelectCategory }) => {
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
             <a
-              href={GITHUB_REPO_URL}
+              href={"https://github.com/darshan-patil08/cohort-3.0-Assignments-/tree/main/Dommie"}
               target="_blank"
               rel="noopener noreferrer"
               style={{
