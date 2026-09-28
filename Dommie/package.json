@@ -1,0 +1,13 @@
+{
+  "name": "dommie-ecommerce",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack E-commerce platform with JWT Auth, Product CRUD, and Organic Design System",
+  "scripts": {
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "dev": "npm run server",
+    "seed": "npm --prefix server run seed"
+  },
+  "keywords": ["ecommerce", "jwt", "refresh-tokens", "express-validator", "react", "mongodb"]
+}
