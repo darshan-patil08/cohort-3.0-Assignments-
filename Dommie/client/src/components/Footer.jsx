@@ -3,7 +3,7 @@ import Logo from './Logo';
 import { useToast } from '../context/ToastContext';
 import { ArrowRight, ShieldCheck, Truck, RotateCcw, Heart, ExternalLink } from 'lucide-react';
 
-const GITHUB_REPO_URL = 'https://github.com/darshan-patil08/cohort-3.0-Assignments-';
+const GITHUB_REPO_URL = 'https://github.com/darshan-patil08/cohort-3.0-Assignments-/tree/main/Dommie';
 
 const Footer = ({ onSelectCategory }) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -31,16 +31,20 @@ const Footer = ({ onSelectCategory }) => {
     >
       <div className="app-container">
         {/* Newsletter Signup Banner */}
-        {/* Newsletter Signup Banner */}
         <div
-          className="p-6 sm:p-10 rounded-2xl sm:rounded-3xl mb-14"
           style={{
             backgroundColor: 'var(--color-hero)',
+            borderRadius: '24px',
+            padding: '44px 40px',
+            marginBottom: '64px',
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '28px',
+            boxShadow: '0 16px 36px -10px rgba(0, 0, 0, 0.35)',
+            position: 'relative',
+            zIndex: 1,
           }}
         >
           <div style={{ maxWidth: '480px' }}>
@@ -68,7 +72,14 @@ const Footer = ({ onSelectCategory }) => {
 
           <form
             onSubmit={handleSubscribe}
-            className="flex flex-col sm:flex-row gap-2.5 w-full max-w-[420px]"
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '12px',
+              width: '100%',
+              maxWidth: '440px',
+              alignItems: 'center',
+            }}
           >
             <input
               type="email"
@@ -76,17 +87,21 @@ const Footer = ({ onSelectCategory }) => {
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
               style={{
-                flex: 1,
+                flex: '1 1 220px',
                 padding: '14px 18px',
                 borderRadius: 'var(--radius-md)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                 color: '#FFFFFF',
                 fontSize: '0.95rem',
                 outline: 'none',
               }}
             />
-            <button type="submit" className="btn btn-primary" style={{ padding: '14px 20px', whiteSpace: 'nowrap' }}>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{ padding: '14px 22px', whiteSpace: 'nowrap', flexShrink: 0 }}
+            >
               <span>Subscribe</span>
               <ArrowRight size={16} />
             </button>
@@ -94,7 +109,15 @@ const Footer = ({ onSelectCategory }) => {
         </div>
 
         {/* 4 Main Footer Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-14">
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '40px',
+            marginBottom: '56px',
+            clear: 'both',
+          }}
+        >
           {/* Brand Info */}
           <div>
             <div style={{ marginBottom: '16px' }}>
